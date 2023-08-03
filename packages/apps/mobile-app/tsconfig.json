@@ -1,0 +1,14 @@
+{
+  "extends": "expo/tsconfig.base",
+  "include": ["./index.ts", "./types.d.ts", "./src/**/*"],
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "module": "CommonJS",
+    "paths": {
+      "~api/*": ["../api/src/api/*"],
+      "~api-root/*": ["../api/src/*"],
+      "~root/*": ["./src/*"]
+    }
+  }
+}
