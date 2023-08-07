@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  mobile-app:
+    build:
+      dockerfile: Dockerfile.mobile-app
+      target: development
+    ports:
+      - "6060:19006"
+    environment:
+      API_URL: http://localhost:3000/api

@@ -1,0 +1,13 @@
+FROM node:18-alpine as development
+
+WORKDIR /app
+
+# install @kv-express/mobile-app dependencies
+COPY packages/apps/mobile-app/package*.json .
+RUN npm ci 
+
+# copy @kv-express/mobile-app source
+COPY packages/apps/mobile-app/. .
+
+CMD [ "npm", "run", "web"  ]
+
