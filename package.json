@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "packages/apps/api"
+    "packages/apps/api",
+    "packages/modules/mongodb",
+    "packages/modules/mailing"
   ],
   "scripts": {
     "lint": "eslint .",

@@ -33,6 +33,7 @@ module.exports = {
         tsconfigRootDir: __dirname,
         project: [
           "./packages/apps/*/tsconfig.json",
+          "./packages/modules/*/tsconfig.json",
         ],
       },
     },

@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>KV Express</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .main {
+        margin: 48px auto;
+        max-width: 560px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.01);
+        border-radius: 8px;
+        padding: 48px 40px;
+      }
+
+      .main-body {
+        padding: 0 8px;
+      }
+
+      .main-body h1 {
+        font-size: 24px;
+        margin: 16px 0 48px 0;
+      }
+
+      .main-body a {
+        text-decoration: none;
+        color: #51acff;
+      }
+
+      .information-table {
+        display: flex;
+        flex-direction: column;
+
+        padding: 16px 32px;
+
+        box-shadow: 0 0 6px 2px;
+        border-radius: 16px;
+      }
+
+      .information-table-date {
+        margin: 4px 0;
+        text-align: end;
+        font-style: italic;
+      }
+
+      .information-table-item {
+        margin: 4px 0;
+      }
+      .information-table-item > div:nth-child(1) {
+        margin: 4px 0;
+        font-weight: bold;
+      }
+
+      .spacer {
+        width: 100%;
+        height: 2px;
+
+        margin: 26px 0;
+        background-color: black;
+      }
+
+      .cover-image {
+        max-width: 100%;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .main {
+          padding: 20px;
+        }
+        
+        .main-body h1 {
+          font-size: 20px;
+        }
+        
+        .information-table {
+          padding: 12px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-body">
+        <img
+          class="cover-image"
+          src="http://cdn.mcauto-images-production.sendgrid.net/15708a52014a0240/5ffb3962-a150-4c29-9057-84d519939ad5/1200x628.jpeg"
+        />
+
+        <h1>A New Customer Request!</h1>
+
+        <div class="information-table">
+          <div class="information-table-date">{{movingDate}}</div>
+
+          <div class="information-table-item">
+            <div class="item-title">Current Location:</div>
+            <div>{{currentLocationAddress}}</div>
+          </div>
+
+          <div class="information-table-item">
+            <div>Current Post Code:</div>
+            <div>{{currentLocationPostCode}}</div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="information-table-item">
+            <div>Destination Location:</div>
+            <div>{{destinationLocationAddress}}</div>
+          </div>
+
+          <div class="information-table-item">
+            <div>Destination Post Code:</div>
+            <div>{{destinationLocationPostCode}}</div>
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="information-table-item">
+            <div>Customer Name:</div>
+            <div>{{customerName}}</div>
+          </div>
+
+          <div class="information-table-item">
+            <div>Customer Phone:</div>
+            <div>{{customerPhone}}</div>
+          </div>
+
+          <div class="information-table-item">
+            <div>Customer Email:</div>
+            <div>{{customerEmail}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
