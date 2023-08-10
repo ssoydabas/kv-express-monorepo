@@ -1,1 +1,1 @@
-export { default } from "./mailing";
+export { default as kvExpressMailing } from "./mailing";

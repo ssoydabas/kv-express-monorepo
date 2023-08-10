@@ -1,6 +1,6 @@
 import { UserModel } from "@kv-express/mongodb";
 
-import mailing from "~api/services/mailing";
+import { kvExpressMailing } from "~api/services/mailing";
 
 import type { RouteFlowType } from "~api/router/utils";
 import {
@@ -31,7 +31,7 @@ export const flow: RouteFlowType<
     verificationToken: createVerificationToken(),
   });
 
-  await mailing.sendEmailVerification({
+  await kvExpressMailing.sendEmailVerification({
     email,
     verificationToken: user.verificationToken,
   });

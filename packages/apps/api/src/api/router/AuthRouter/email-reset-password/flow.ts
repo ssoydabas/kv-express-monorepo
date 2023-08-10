@@ -1,6 +1,6 @@
 import { UserModel } from "@kv-express/mongodb";
 
-import mailing from "~api/services/mailing";
+import { kvExpressMailing } from "~api/services/mailing";
 
 import { type RouteFlowType } from "../../utils";
 import { createResetPasswordToken } from "~api/services/auth/utils";
@@ -27,7 +27,7 @@ export const flow: RouteFlowType<
 
   await user.save();
 
-  await mailing.sendResetPasswordEmail({ email, token });
+  await kvExpressMailing.sendResetPasswordEmail({ email, token });
 
   return successResponse(user.email);
 };

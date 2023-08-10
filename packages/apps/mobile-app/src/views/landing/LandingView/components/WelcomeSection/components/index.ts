@@ -1,2 +1,2 @@
 export { default as GreetingSection } from "./GreetingSection";
-export { default as ContactFormSection } from "./ContactFormSection";
+export { default as CustomerRequestSection } from "./CustomerRequestSection";

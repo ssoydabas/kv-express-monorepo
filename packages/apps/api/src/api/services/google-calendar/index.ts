@@ -1,3 +1,5 @@
-export { default as getCalendarEvents } from "./get-events";
-export { default as createCalendarEvent } from "./create-event";
-export { default as deleteCalendarEvent } from "./delete-event";
+export { default as getManyEvents } from "./get-many-events";
+export { default as getOneEvent } from "./get-one-event";
+export { default as getManyEventsInADay } from "./get-many-events-in-a-day";
+export { default as createOneEvent } from "./create-one-event";
+export { default as deleteOneEvent } from "./delete-one-event";

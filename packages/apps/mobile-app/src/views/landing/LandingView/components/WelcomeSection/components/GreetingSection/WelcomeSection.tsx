@@ -9,7 +9,7 @@ import PhoneIcon from "~root/components/icons/PhoneIcon";
 export default function WelcomeSection() {
   const { width } = useWindowDimensions();
   return (
-    <VStack width="40%">
+    <VStack>
       <Image
         source={Logo}
         style={{

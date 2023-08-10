@@ -26,7 +26,6 @@
 
       .main-body h1 {
         font-size: 24px;
-        margin: 16px 0 48px 0;
       }
 
       .main-body a {
@@ -35,24 +34,20 @@
       }
 
       .information-table {
-        display: flex;
-        flex-direction: column;
-
         padding: 16px 32px;
-
-        box-shadow: 0 0 6px 2px;
         border-radius: 16px;
       }
 
       .information-table-date {
         margin: 4px 0;
-        text-align: end;
+        text-align: right;
         font-style: italic;
       }
 
       .information-table-item {
         margin: 4px 0;
       }
+
       .information-table-item > div:nth-child(1) {
         margin: 4px 0;
         font-weight: bold;
@@ -61,27 +56,14 @@
       .spacer {
         width: 100%;
         height: 2px;
-
         margin: 26px 0;
         background-color: black;
+        clear: both; /* This clears the float property */
       }
 
       .cover-image {
         max-width: 100%;
-      }
-
-      @media only screen and (max-width: 768px) {
-        .main {
-          padding: 20px;
-        }
-        
-        .main-body h1 {
-          font-size: 20px;
-        }
-        
-        .information-table {
-          padding: 12px 20px;
-        }
+        display: block;
       }
     </style>
   </head>
@@ -90,17 +72,16 @@
       <div class="main-body">
         <img
           class="cover-image"
-          src="http://cdn.mcauto-images-production.sendgrid.net/15708a52014a0240/5ffb3962-a150-4c29-9057-84d519939ad5/1200x628.jpeg"
+          src="http://cdn.mcauto-images-production.sendgrid.net/15708a52014a0240/bcdb4452-a4c6-4761-a09e-9a406b48352a/2560x519.png"
         />
-
         <h1>A New Customer Request!</h1>
 
         <div class="information-table">
-          <div class="information-table-date">{{movingDate}}</div>
+          <div class="information-table-date">{{date}}</div>
 
           <div class="information-table-item">
             <div class="item-title">Current Location:</div>
-            <div>{{currentLocationAddress}}</div>
+            <div>{{currentLocation}}</div>
           </div>
 
           <div class="information-table-item">
@@ -112,7 +93,7 @@
 
           <div class="information-table-item">
             <div>Destination Location:</div>
-            <div>{{destinationLocationAddress}}</div>
+            <div>{{destinationLocation}}</div>
           </div>
 
           <div class="information-table-item">
@@ -123,18 +104,18 @@
           <div class="spacer"></div>
 
           <div class="information-table-item">
-            <div>Customer Name:</div>
-            <div>{{customerName}}</div>
+            <div>Name:</div>
+            <div>{{name}}</div>
           </div>
 
           <div class="information-table-item">
-            <div>Customer Phone:</div>
-            <div>{{customerPhone}}</div>
+            <div>Mobile:</div>
+            <div>{{mobile}}</div>
           </div>
 
           <div class="information-table-item">
-            <div>Customer Email:</div>
-            <div>{{customerEmail}}</div>
+            <div>Email:</div>
+            <div>{{email}}</div>
           </div>
         </div>
       </div>

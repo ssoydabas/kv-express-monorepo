@@ -3,7 +3,7 @@ export const getDateStrings = (input: string) => {
   const date = new Date(input);
 
   const startingDate = date.toISOString();
-  date.setMinutes(date.getMinutes() + 30);
+  date.setMinutes(date.getMinutes() + 29);
 
   const endingDate = date.toISOString();
 

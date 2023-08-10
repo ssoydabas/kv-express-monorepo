@@ -26,11 +26,39 @@ import { type calendar_v3 } from "googleapis";
 //   eventType: string;
 // }
 
-export interface IGoogleCalendarEventType extends calendar_v3.Schema$Event {}
+interface IGoogleCalendarEventType extends calendar_v3.Schema$Event {}
 
-export interface IGetEventsReturnType {
+export interface IGoogleCalendarSanitizedEventType {
+  id: string;
+  start: {
+    dateTime: string;
+    timeZone: string;
+  };
+  end: {
+    dateTime: string;
+    timeZone: string;
+  };
+  details: {
+    name: string;
+    mobile: string;
+    email: string;
+    currentLocation: string;
+    currentLocationPostCode: string;
+    destinationLocation: string;
+    destinationLocationPostCode: string;
+    date: string;
+  };
+}
+
+export interface IGetManyEventsReturnType {
   status: "OK" | "NOT_FOUND" | "BAD_REQUEST";
   events: IGoogleCalendarEventType[];
+  errorMessage?: string;
+}
+
+export interface IGetOneEventReturnType {
+  status: "OK" | "NOT_FOUND" | "BAD_REQUEST";
+  event?: IGoogleCalendarEventType;
   errorMessage?: string;
 }
 

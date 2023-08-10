@@ -36,8 +36,11 @@ export default function AdvertisementSection() {
           All our advantage at a glance:
         </Text>
 
-        {ourAdvantages.map((advantage) => (
-          <AdvantageBulletItem text={advantage} />
+        {ourAdvantages.map((advantage, index) => (
+          <AdvantageBulletItem
+            key={`${index}-${Math.random()}`}
+            text={advantage}
+          />
         ))}
       </VStack>
     </ImageBackground>
