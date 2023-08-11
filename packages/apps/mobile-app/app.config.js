@@ -11,6 +11,9 @@ module.exports = {
     orientation: "portrait",
     icon: "./assets/icon.png",
     userInterfaceStyle: "light",
+    packagerOpts: {
+      port: "6060",
+    },
     splash: {
       image: "./assets/splash.png",
       resizeMode: "contain",

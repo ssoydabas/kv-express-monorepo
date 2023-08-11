@@ -4,63 +4,30 @@ services:
   api:
     build:
       dockerfile: Dockerfile.api
-      target: development
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mongodb
-    volumes:
-      - ./packages/apps/api:/app/packages/apps/api
-    environment:
-      - PORT=3000
-      - MONGODB_URI=mongodb://mongodb:27017/kv-express-dev
-
-  api-prod:
-    build:
-      dockerfile: Dockerfile.api
       target: production
     ports:
-      - "5000:5000"
+      - "3001:3001"
     depends_on:
       - mongodb
-    environment:
-      - PORT=3000
-      - MONGODB_URI=mongodb://mongodb:27017/kv-express-dev
+    env_file:
+      - ./envs/api/.env
 
   mobile-app:
     build:
       dockerfile: Dockerfile.mobile-app
-      target: development
+      target: production
+    ports:
+      - 19006:19006
+      - 6060:19006
     depends_on:
       - api
-    ports:
-      - "6060:19006"
-    volumes:
-      - ./packages/apps/mobile-app:/app/packages/apps/mobile-app
-    environment:
-      API_URL: http://localhost:3000/api
-
-  mobile-app-prod:
-    depends_on:
-      - api-prod
-    build:
-      dockerfile: Dockerfile.mobile-app
-      target: production
-      args:
-        API_URL: http://localhost:5000/api
-        APP_URL: http://localhost:6060
-    environment:
-      - PORT=6060
-      - MONGODB_URI=mongodb://mongodb:27017/kv-express-dev
-      - API_URL=http://localhost:5000/api
-      - APP_URL=http://localhost:6060
-    ports:
-      - 6060:6060
+    env_file:
+      - ./envs/mobile-app/.env
 
   mongodb:
     image: mongo:latest
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - mongodb-data:/data/db
 
