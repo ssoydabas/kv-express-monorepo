@@ -17,7 +17,6 @@ services:
       dockerfile: Dockerfile.mobile-app
       target: production
     ports:
-      - 19006:19006
       - 6060:19006
     depends_on:
       - api
